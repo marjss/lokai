@@ -22,10 +22,10 @@
 			<div class="nav-right">
 					<ul class="social-icon">
 		    <li><a href="#" target="_blank" class="tw-icon"><img src="images/tw-icon.png" alt=""></a></li>
-			<li><a href="#" target="_blank" class="insta-icon"><img src="images/insta-icon.png" alt=""></a></a></li>
+			<li><a href="#"  target="_blank" class="insta-icon"><img src="images/insta-icon.png" alt=""></a></a></li>
 		</ul>		
 		<ul class="other-ul">
-		    <li><a href="#" ><img src="images/cart.png" alt=""> Cart </a></li>
+		    <li><a href="javascript:void(0)" id="cart_icon" ><img src="images/cart.png" alt=""> Cart </a></li>
                     <?php if(isset($_SESSION['status']) && $_SESSION['status'] == 'verified') 
                                 {
                                 //Twitter Session

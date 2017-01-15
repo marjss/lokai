@@ -123,7 +123,7 @@
 				<div class = "intro">
 				<h2>Thank you joining the community</h2>
 				<p class="quotes">"America Elements, that will help our Heroes. Your purchase and your support will go along<br/> way to giving our heroes the help they deserve." <span>- Eduardo Zaldivar, Founder of America Elements</span></p>
-				<a href="#" class="common-btn">Buy Now</a>
+				<a href="javascript:void(0)" class="common-btn" id="buynow" data-session="1" >Buy Now</a>
 				<p>When you purchase a Lokai, 10 PERCENT of net profits will be dedicated to giving back to the<br/> community through a variety of charitable alliances. BUY NOW and join the Lokai circle!</p>
 			</div>
 

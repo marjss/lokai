@@ -11,9 +11,9 @@ if(isset($otp)){
             
             $db_user = new Users();
             $logged = $db_user->checkOtpUser('otp','',$_SESSION['email'],$_SESSION['email'],'','','',$_SESSION['otp'],'','');
-            return true;
+            echo "success";
         } else {
-            return false;
+            echo "fail";
         }
         
     }

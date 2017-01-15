@@ -3,7 +3,7 @@
 		<div class="container">
 		<div class="footer-left">
 		<ul>
-			<li>©2016 &nbsp; Lokai</li>
+			<li>&copy;<?php echo date("Y"); ?> &nbsp; Lokai</li>
 			<li><a href="#" class="" data-toggle="modal" data-target="#terms">Terms of use</a></li>
 			<li><a href="#" class="" data-toggle="modal" data-target="#privacy">Privacy Policy</a></li>
 			<div class="clearfix"></div>
@@ -70,8 +70,173 @@
 
                     </div>
                 </div>
+                <div id="cart" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title " style="color:#000">Cart</h4>
+                        </div>
+                        <div class="modal-body" style="color:#000">
+                            <table class="table table-striped table-hover table-bordered">
+                                <tbody>
+                                    
+                                        <tr>
+                                        <th>Item</th>
+                                        <th>QTY</th>
+                                        <th>Unit Price</th>
+                                        <th>Total Price</th>
+                                    </tr>
+                                    <tr>
+                                        <td>America Elements</td>
+                                        <td id="qty"><input type="number" id="editqty" style="width: 45px; padding: 1px" value="0" min="0"></td>
+                                        <td id="price"><?php echo PRICE; ?></td>
+                                        <td id="price_sub"></td>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="3"><span class="pull-right">Sub Total</span></th>
+                                        <th id="subtotal"></th>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="3"><span class="pull-right">Shipping</span></th>
+                                        <th id="shipping"></th>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="3"><span class="pull-right">Total</span></th>
+                                        <th id="total"></th>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#" class="btn btn-primary" data-dismiss="modal" >Continue</a></td>
+                                        <td colspan="3"><a href="javascript:void(0)" id="checkout" class="pull-right btn btn-success">Checkout</a></td>
+                                    </tr>
+                                 
+                                    
+                                </tbody>
+                            </table>          
+
+                       
+                        </div>
+                        
+                      </div>
+
+                    </div>
+                </div>
+                <div id="cart_empty" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title " style="color:#000">Cart</h4>
+                        </div>
+                        <div class="modal-body" style="color:#000">
+                            <table class="table table-striped table-hover table-bordered">
+                                <tbody>
+                                    
+                                      <tr>
+                                        <th>Cart is Empty</th>
+                                        
+                                    </tr>
+                                
+                                    
+                                </tbody>
+                            </table>          
+
+                       
+                        </div>
+                        
+                      </div>
+
+                    </div>
+                </div>
+                <div id="checkout_model" class="modal fade" role="dialog">
+                    <div class="modal-dialog bigBody" >
+
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title " style="color:#000">Checkout</h4>
+                        </div>
+                        <div class="modal-body" style="color:#000">
+                            <div class="row cart-body">
+                            <form class="form-horizontal" method="post" action="">
+                               <!--SHIPPING METHOD-->
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <h4>Shipping Address</h4>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-xs-12">
+                                                <strong>First Name:</strong>
+                                                <input type="text" name="first_name" class="form-control" value="" />
+                                            </div>
+                                            <div class="span1"></div>
+                                            <div class="col-md-6 col-xs-12">
+                                                <strong>Last Name:</strong>
+                                                <input type="text" name="last_name" class="form-control" value="" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-12"><strong>Address:</strong></div>
+                                            <div class="col-md-12">
+                                                <input type="text" name="address" class="form-control" value="" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-xs-12">
+                                                <strong>Country:</strong>
+                                                <input type="text" name="country" class="form-control" value="" />
+                                            </div>
+                                            <div class="span1"></div>
+                                            <div class="col-md-6 col-xs-12">
+                                                <strong>State:</strong>
+                                                <input type="text" name="state" class="form-control" value="" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-xs-12">
+                                                <strong>City:</strong>
+                                                <input type="text" name="city" class="form-control" value="" />
+                                            </div>
+                                            <div class="span1"></div>
+                                            <div class="col-md-6 col-xs-12">
+                                                <strong>Zip / Postal Code:</strong>
+                                                <input type="text" name="zip_code" class="form-control" value="" />
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <div class="col-md-12"><strong>Phone Number:</strong></div>
+                                            <div class="col-md-12"><input type="text" name="phone_number" class="form-control" value="" /></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-12"><strong>Email Address:</strong></div>
+                                            <div class="col-md-12"><input type="text" name="email_address" class="form-control" value="" /></div>
+                                        </div>
+                                    </div>
+                                
+                                <!--SHIPPING METHOD END-->
+
+                            
+
+                            </form>
+                            </div>
+                        </div>
+                        
+                      </div>
+
+                    </div>
+                </div>
 	</body>
 <script>
+    
     // override jquery validate plugin defaults
     $.validator.setDefaults({
     highlight: function(element) {
@@ -114,7 +279,7 @@
                success:function(){
                    var url = removeURLParameter(window.location.href, 'code')
                    window.location.href = url;
-                   
+                   location.reload();
                }
            })
        } 
@@ -147,10 +312,15 @@
 }
     
     $(document).ready(function(){
+        var cartobj;
+        $("[type='number']").keypress(function (evt) {
+            evt.preventDefault();
+        });
         $('#login').on('hidden.bs.modal', function () {
            
             $(this).find('form')[0].reset();
         });
+        
         //validation for login
         
         $("#OtpForm").validate({
@@ -195,56 +365,210 @@
                             })
                          }
 		});
-                $(document).on('click',"#otpButton",function(){
-                    if($("#otp").valid()){
-                        var otp = $("#otp").val();
-                        $.ajax({
-                            type: 'POST',
-                                    url:"loginOTP.php",
-                                    data:{otp:otp},
-                                    success:function(success){
-                                        if(success){
-                                            var url = removeURLParameter(window.location.href, 'code')
-                                            window.location.href = url;
-                                        }
-                                    },
-                                    error:function(error){}
-                        });
-                    }
+        $.validator.addMethod("checkotp",
+            function (value, element) {
+                return false;
+            },
+        'One time password is invalid.');
+        $(document).on('click',"#otpButton",function(){
+            $( "#otp" ).rules( "remove", "checkotp" );
+            if($("#otp").valid()){
+                var otp = $("#otp").val();
+                $.ajax({
+                    type: 'POST',
+                            url:"loginOTP.php",
+                            data:{otp:otp},
+                            success:function(success){
+                                if(success == "success"){
+                                     location.reload();
+                                } else {
+                                   $("#otp").rules('add', {checkotp: true});
+                                   $("#otp").valid();
+                                    return
+                                }
+                            },
+                            error:function(error){}
                 });
-                $(document).on('click',"#regenotpButton",function(){
-                    var email = $(this).data("email");
-                    $(this).replaceWith('<a href="javascript:void(0)" class="btn btn-primary btn-primary" id="otpButton" ><span class="glyphicon glyphicon-log-in"></span> Submit OTP</a>');
-                    $.ajax({
-                                type: 'POST',
-                                url:"otp.php",
-                                data:{email:email},
-                                success:function(success){
-                                    if(success == 'true'){
-                                        var count=300;
-                                        var counter=setInterval(timer, 1000);
-                                        function timer()
-                                        {
-                                          count=count-1;
-                                          if (count <= 0)
-                                          {
-                                             clearInterval(counter);
-                                             $("#otpButton").replaceWith('<a href="javascript:void(0)" data-email="'+email+'" class="btn btn-primary btn-primary" id="regenotpButton"><span class="glyphicon glyphicon-log-in"></span> Regenerate OTP</a>')
-                                             return;
-                                          }
+            }
+        });
+        $(document).on('click',"#cart_icon",function(){
+            $.ajax({
+                    type: 'POST',
+                    data:{show:1},
+                    url:"addTocart.php",
+                    success:function(success){
+                        cartObj = $.parseJSON(success)
+                        if(cartObj.status && cartObj.qty !=0){
+                            
+                            $("#buynow").attr("data-session",cartObj.qty);
+                            $("#editqty").val(cartObj.qty);
+                            $("td#price_sub").text(cartObj.price);
+                            $("th#subtotal").text(cartObj.price);
+                            $("th#shipping").text(cartObj.shipping);
+                            $("th#total").text(cartObj.gtotal);
+                            $("#cart").modal("show");
+                        } else {
+                            $("#cart_empty").modal("show");
+                        }
+                    },
+                    error:function(error){}
+            });
+        })
+        $(document).on('click',"#regenotpButton",function(){
+            var email = $(this).data("email");
+            $(this).replaceWith('<a href="javascript:void(0)" class="btn btn-primary btn-primary" id="otpButton" ><span class="glyphicon glyphicon-log-in"></span> Submit OTP</a>');
+            $.ajax({
+                        type: 'POST',
+                        url:"otp.php",
+                        data:{email:email},
+                        success:function(success){
+                            if(success == 'true'){
+                                var count=300;
+                                var counter=setInterval(timer, 1000);
+                                function timer()
+                                {
+                                  count=count-1;
+                                  if (count <= 0)
+                                  {
+                                     clearInterval(counter);
+                                     $("#otpButton").replaceWith('<a href="javascript:void(0)" data-email="'+email+'" class="btn btn-primary btn-primary" id="regenotpButton"><span class="glyphicon glyphicon-log-in"></span> Regenerate OTP</a>')
+                                     return;
+                                  }
 
-                                          $("#timer").html(count+" Seconds left to input OTP")
-                                        }
-                                    } else {
-                                        alert("Problem in generating OTP")
-                                    }
-                                    
-                                },
-                                error:function(error){}
-                    })
-                });
+                                  $("#timer").html(count+" Seconds left to input OTP")
+                                }
+                            } else {
+                                alert("Problem in generating OTP")
+                            }
+
+                        },
+                        error:function(error){}
+            })
+        });
+        $(document).on('click',"#buynow",function(){
+            var cart = $(this).attr('data-session');
+                $.ajax({
+                    type: 'POST',
+                    data:{add:cart},
+                    url:"addTocart.php",
+                    success:function(success){
+                         cartObj = $.parseJSON(success)
+                        if(cartObj.status){
+                            $("#buynow").attr("data-session",cartObj.qty);
+                            $("#editqty").val(cartObj.qty);
+                            $("td#price_sub").text(cartObj.price);
+                            $("th#subtotal").text(cartObj.price);
+                            $("th#shipping").text(cartObj.shipping);
+                            $("th#total").text(cartObj.gtotal);
+                            $("#cart").modal("show");
+                        } else {
+                            location.reload();
+                            return
+                        }
+                    },
+                    error:function(error){}
+            });
+        });
+                var carQty = $("#editqty").val();
+        $("#editqty").on('keyup change click', function() {
+            if (this.value !== carQty) {
                 
+                $.ajax({
+                    type: 'POST',
+                    data:{add:this.value},
+                    url:"addTocart.php",
+                    success:function(success){
+                         cartObj = $.parseJSON(success);
+                         
+                        if(cartObj.status){
+                           
+                            $("#buynow").attr("data-session",cartObj.qty);
+                            $("#editqty").val(cartObj.qty);
+                            $("td#price_sub").text(cartObj.price);
+                            $("th#subtotal").text(cartObj.price);
+                            $("th#shipping").text(cartObj.shipping);
+                            $("th#total").text(cartObj.gtotal);
+                            $("#cart").modal("show");
+                        } else {
+                            location.reload();
+                            return
+                        }
+                    },
+                    error:function(error){}
+            });
+//              value = this.value;
+            } else  {
+                emptyCart();
+            }
+        });
+        $(document).on('click',"#checkout",function(){
+             $.ajax({
+                    type: 'POST',
+                    async:true,
+                   
+                    url:"checkSession.php",
+                    success:function(success){
+                       if(success == "true"){
+                            $("#cart").modal("hide");
+                            $("#checkout_model").modal("show");
+                       } else {
+                            $("#cart").modal("hide");
+                            $("#login").modal("show");
+                       }
+                        
+                    },
+                    error:function(error){}
+            });
+        });
+        
+        $('#cart').on('show.bs.modal', function () {
+           
+          
+        });
+        
+          function emptyCart(){
+              $.ajax({
+                    type: 'POST',
+                    data:{add:0},
+                    url:"addTocart.php",
+                    success:function(success){
+                        cartObj = $.parseJSON(success);
+//                            $("#buynow").attr("data-session",0);
+                            $("#editqty").val(0);
+                            $("td#price_sub").text(0);
+                            $("th#subtotal").text(0);
+                            $("th#shipping").text(0);
+                            $("th#total").text(0);
+                            $("#cart").modal("hide");
+                            $("#cart_empty").modal("show");
+                            return
+                        
+                    },
+                    error:function(error){}
+            });
+          }    
+          
                 
     });
 </script>
+<style>
+.modal-dialog.bigBody {
+    width: 80%; /* respsonsive width */
+    }
+    #checkout_model .modal-body{
+    height:800px;
+    overflow-y: auto;
+}
+
+@media (min-height: 500px) {
+    #checkout_model .modal-body { height: 400px; }
+    .modal-dialog.bigBody {
+    width: 80%; /* respsonsive width */
+    }
+}
+
+@media (min-height: 800px) {
+    #checkout_model .modal-body { height: 600px; }
+}
+</style>
 </html>

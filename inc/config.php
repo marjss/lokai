@@ -10,4 +10,7 @@ define('OAUTH_CALLBACK', 'http://localhost/lokai/process.php');
 
 //Basic Config
 define('HOME_URL', "http://" . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']);
+define('PRICE', 250);
+define('VAT', 0);
+define('SHIPPING', 250);
 
