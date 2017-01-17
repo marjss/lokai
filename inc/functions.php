@@ -54,6 +54,18 @@ class Users {
 		$result = mysqli_fetch_array($query);
 		return $result;
 	}
+        function createOrder(){
+		$prevQuery = mysqli_query($this->connect,"SELECT * FROM $this->tableName WHERE email = '".$email."'") or die(mysqli_error($this->connect));
+		if(mysqli_num_rows($prevQuery) > 0){
+			$update = mysqli_query($this->connect,"UPDATE $this->tableName SET oauth_token = '".$oauth_token."', modified = '".date("Y-m-d H:i:s")."' WHERE oauth_provider = '".$oauth_provider."' AND email = '".$email."'") or die(mysqli_error($this->connect));
+		}else{
+			$insert = mysqli_query($this->connect,"INSERT INTO orders SET oauth_provider = '".$oauth_provider."', oauth_uid = '".$oauth_uid."', username = '".$username."', email = '".$email."', fname = '".mysql_real_escape_string($fname)."', lname = '".$lname."', locale = '".$locale."', oauth_token = '".$oauth_token."', oauth_secret = '".$oauth_secret."', picture = '".$profile_image_url."', created = '".date("Y-m-d H:i:s")."', modified = '".date("Y-m-d H:i:s")."'") or die(mysqli_error($this->connect));
+		}
+		
+		$query = mysqli_query($this->connect,"SELECT * FROM $this->tableName WHERE oauth_provider = '".$oauth_provider."' AND email = '".$email."'") or die(mysqli_error($this->connect));
+		$result = mysqli_fetch_array($query);
+		return $result;
+	}
         
         function getOTP($email = null) {
             if($email != NULL){

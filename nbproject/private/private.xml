@@ -7,8 +7,10 @@
             <file>file:/opt/lampp/htdocs/lokai/otp.php</file>
             <file>file:/opt/lampp/htdocs/lokai/process.php</file>
             <file>file:/opt/lampp/htdocs/lokai/inc/functions.php</file>
+            <file>file:/opt/lampp/htdocs/lokai/logout.php</file>
             <file>file:/opt/lampp/htdocs/lokai/navbar.php</file>
             <file>file:/opt/lampp/htdocs/lokai/footer.php</file>
+            <file>file:/opt/lampp/htdocs/lokai/checkSession.php</file>
             <file>file:/opt/lampp/htdocs/lokai/header.php</file>
             <file>file:/opt/lampp/htdocs/lokai/index.php</file>
             <file>file:/opt/lampp/htdocs/lokai/addTocart.php</file>
